@@ -2,7 +2,7 @@
 
 ## About Me
 
-Hello! I'm a **Distinguished Data Engineer** with a strong focus on **Google Cloud Platform (GCP)** and **Hadoop services**. With a passion for big data and cloud computing.
+Hello! I'm a **Data Engineer** with a strong focus on **Google Cloud Platform (GCP)** and **Hadoop services**. With a passion for big data and cloud computing.
 A problem solver who loves to work with data.
 Highly skilled and experienced data engineer with expertise in Big Data and modern data warehousing.
 Extensive experience with data modeling, schema design, and database technologies.
