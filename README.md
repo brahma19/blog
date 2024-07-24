@@ -49,10 +49,11 @@ Optimized a large-scale Hadoop cluster, improving performance and reducing costs
 Migrated on prem Hadoop workloads and Data to GCP and integrating with BigQuery and Dataproc for analytics and machine learning workloads.
 
 ### 4. BigQuery ELT for Wireless Customers
-Developed an ELT process in BigQuery capable of processing 70TB of data per hour within a 10-minute SLA. This pipeline aggregates session-level information and calculates hourly KPIs for wireless customers connected to cell sites.
+Developed an ELT process in BigQuery capable of processing **70 TB** of data per hour within a **10-minute** SLA. This pipeline aggregates session-level information and calculates hourly KPIs for wireless customers connected to cell sites.
 
 ### 5. Cost Optimization with Cloud FinOps
-Implemented cost-saving measures across various GCP services, leveraging FinOps principles to optimize resource usage and reduce expenses.
+Implemented cost-saving measures across various GCP services, reduced project level cost by **45 %** by modernising spark/hadoop worklodas running on Dataproc Long Running clusters to Dataproc Serverless and Native BQ ELT.
+Leveraging FinOps principles to optimize resource usage and reduce expenses.
 
 ## Blog
 
