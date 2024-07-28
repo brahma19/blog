@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Welcome to My GitHub Page
 
 ## About Me
