@@ -6,9 +6,6 @@ defaults:
     values:
       layout: "default"
 
-# Specify README.md as the index page
-index_page: README.md
-
 theme: jekyll-theme-minimal
 title: Brahma's Personal Blog
 description: Writing about Data Engineering problems and SQL
