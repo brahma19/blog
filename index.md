@@ -62,7 +62,16 @@ Leveraging FinOps principles to optimize resource usage and reduce expenses.
 
 ## Blog
 
-[Latest Weekly Update]({% link _posts/2024-08-31-weekly.md %})
+<h2>Blog Posts</h2>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span>{{ post.date | date_to_string }}</span>
+    </li>
+  {% endfor %}
+</ul>
+      
 
 ## Contact Me
 
