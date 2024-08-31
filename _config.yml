@@ -2,9 +2,16 @@
 defaults:
   -
     scope:
-      path: "" # This applies to all files in your repository
+      path: "" 
     values:
       layout: "default"
+
+  - # Exclude weekly posts
+    scope:
+      path: "_posts/*"  # Matches all files within _posts
+      exclude: ["_posts/*.weekly.md"]  
+    values:
+      include: false
 
 theme: jekyll-theme-minimal
 title: Brahma's Personal Blog
