@@ -61,16 +61,7 @@ Implemented cost-saving measures across various GCP services, reduced project le
 Leveraging FinOps principles to optimize resource usage and reduce expenses.
 
 ## Blog
-
-<h2>Blog Posts</h2>
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <span>{{ post.date | date_to_string }}</span>
-    </li>
-  {% endfor %}
-</ul>
+* [Weekly Blog Posts](_posts/2024-08-31-weekly.md)
       
 
 ## Contact Me
