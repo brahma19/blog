@@ -1,0 +1,211 @@
+---
+layout: post
+title: "Week 1 Updates"
+date: 2024-08-31
+---
+# Submitting Dataproc Serverless PySpark Jobs with Composer
+
+In this post, we'll walk through the process of creating an Apache Airflow DAG using Cloud Composer to submit a Dataproc Serverless PySpark job in Google Cloud Platform (GCP). We'll cover important aspects such as specifying a custom Customer-Managed Encryption Key (CMEK), subnetwork, metastore, and Persistent History Server (PHS), along with other crucial configurations.
+
+## Prerequisites
+
+Before we dive in, make sure you have:
+
+1. A GCP project with Composer and Dataproc APIs enabled
+2. Appropriate IAM permissions to create and run Dataproc jobs
+3. A Cloud Composer environment set up
+4. A service account with necessary permissions
+5. A GCP connection set up in Airflow
+
+## The DAG Code
+
+Let's start by looking at the complete DAG code, and then we'll break it down section by section.
+
+```python
+from airflow import DAG
+from airflow.providers.google.cloud.operators.dataproc import (
+    DataprocCreateBatchOperator,
+)
+from airflow.utils.dates import days_ago
+
+default_args = {
+    'owner': 'airflow',
+    'depends_on_past': False,
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 1,
+}
+
+dag = DAG(
+    'dataproc_serverless_pyspark_job',
+    default_args=default_args,
+    description='A DAG to submit a Dataproc Serverless PySpark job',
+    schedule_interval=None,
+    start_date=days_ago(1),
+    tags=['dataproc', 'serverless', 'pyspark'],
+)
+
+# Replace these with your actual GCP project details
+PROJECT_ID = 'your-project-id'
+REGION = 'your-region'
+SUBNET = 'projects/{project_id}/regions/{region}/subnetworks/{subnetwork}'
+METASTORE_SERVICE = 'projects/{project_id}/locations/{region}/services/{metastore_service}'
+PHS_SERVER = 'projects/{project_id}/regions/{region}/phsServers/{phs_server}'
+KMS_KEY = 'projects/{project_id}/locations/{region}/keyRings/{key_ring}/cryptoKeys/{key}'
+SERVICE_ACCOUNT = 'your-service-account@your-project-id.iam.gserviceaccount.com'
+GCP_CONN_ID = 'your_gcp_connection_id'
+
+create_batch = DataprocCreateBatchOperator(
+    task_id='create_dataproc_pyspark_batch',
+    project_id=PROJECT_ID,
+    region=REGION,
+    batch={
+        'pyspark_batch': {
+            'main_python_file_uri': 'gs://your-bucket/your-pyspark-script.py',
+            'args': ['arg1', 'arg2'],  # Optional: Add arguments for your PySpark job
+            'jar_file_uris': [
+                # Uncomment the next line if you need a specific version of the BigQuery connector
+                # 'gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar',
+            ],
+        },
+        'environment_config': {
+            'execution_config': {
+                'subnetwork_uri': SUBNET,
+                'kms_key': KMS_KEY,
+                'service_account': SERVICE_ACCOUNT,
+            },
+            'peripherals_config': {
+                'metastore_service': METASTORE_SERVICE,
+                'spark_history_server_config': {
+                    'dataproc_cluster': PHS_SERVER,
+                },
+            },
+        },
+        'runtime_config': {
+            'version': '2.2',
+            'properties': {
+                # Uncomment and modify these if you need specific BigQuery connector configurations
+                # 'spark.datasource.bigquery.project.id': PROJECT_ID,
+                # 'spark.datasource.bigquery.temporaryGcsBucket': 'your-temporary-gcs-bucket',
+            },
+        },
+    },
+    batch_id='dataproc-serverless-pyspark-job-{{ds_nodash}}-{{task_instance.try_number}}',
+    gcp_conn_id=GCP_CONN_ID,
+    dag=dag,
+)
+
+create_batch
+```
+
+Now, let's break down the key components of this DAG.
+
+## DAG Configuration
+
+```python
+dag = DAG(
+    'dataproc_serverless_pyspark_job',
+    default_args=default_args,
+    description='A DAG to submit a Dataproc Serverless PySpark job',
+    schedule_interval=None,
+    start_date=days_ago(1),
+    tags=['dataproc', 'serverless', 'pyspark'],
+)
+```
+
+This section sets up the DAG configuration. We've set `schedule_interval=None`, which means this DAG will only run when triggered manually. Adjust this if you want the job to run on a schedule.
+
+## Project-Specific Variables
+
+```python
+PROJECT_ID = 'your-project-id'
+REGION = 'your-region'
+SUBNET = 'projects/{project_id}/regions/{region}/subnetworks/{subnetwork}'
+METASTORE_SERVICE = 'projects/{project_id}/locations/{region}/services/{metastore_service}'
+PHS_SERVER = 'projects/{project_id}/regions/{region}/phsServers/{phs_server}'
+KMS_KEY = 'projects/{project_id}/locations/{region}/keyRings/{key_ring}/cryptoKeys/{key}'
+SERVICE_ACCOUNT = 'your-service-account@your-project-id.iam.gserviceaccount.com'
+GCP_CONN_ID = 'your_gcp_connection_id'
+```
+
+Replace these variables with your actual GCP project details. These include:
+
+- Your project ID and region
+- The subnetwork where the job will run
+- The Metastore service for Hive metadata
+- The Persistent History Server for job history
+- The Customer-Managed Encryption Key (CMEK) for data encryption
+- The service account that will run the job
+- The Airflow connection ID for GCP authentication
+
+## Dataproc Job Configuration
+
+The core of our DAG is the `DataprocCreateBatchOperator`, which submits the Dataproc Serverless job. Let's break down its configuration:
+
+### PySpark Batch Configuration
+
+```python
+'pyspark_batch': {
+    'main_python_file_uri': 'gs://your-bucket/your-pyspark-script.py',
+    'args': ['arg1', 'arg2'],  # Optional: Add arguments for your PySpark job
+    'jar_file_uris': [
+        # Uncomment the next line if you need a specific version of the BigQuery connector
+        # 'gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar',
+    ],
+},
+```
+
+This section specifies the PySpark script to run and any arguments it needs. You can also specify additional JARs here if needed.
+
+### Environment Configuration
+
+```python
+'environment_config': {
+    'execution_config': {
+        'subnetwork_uri': SUBNET,
+        'kms_key': KMS_KEY,
+        'service_account': SERVICE_ACCOUNT,
+    },
+    'peripherals_config': {
+        'metastore_service': METASTORE_SERVICE,
+        'spark_history_server_config': {
+            'dataproc_cluster': PHS_SERVER,
+        },
+    },
+},
+```
+
+This section configures the environment for the job, including:
+
+- The subnetwork to run in
+- The CMEK for encryption
+- The service account to use
+- The Metastore service
+- The Persistent History Server
+
+### Runtime Configuration
+
+```python
+'runtime_config': {
+    'version': '2.2',
+    'properties': {
+        # Uncomment and modify these if you need specific BigQuery connector configurations
+        # 'spark.datasource.bigquery.project.id': PROJECT_ID,
+        # 'spark.datasource.bigquery.temporaryGcsBucket': 'your-temporary-gcs-bucket',
+    },
+},
+```
+
+Here, we specify the Dataproc runtime version and can set additional Spark properties if needed.
+
+## BigQuery Connector
+
+Dataproc 2.2 comes with the BigQuery connector pre-installed, so you typically don't need to specify it explicitly. However, if you need a specific version or configuration, you can uncomment and modify the relevant lines in the `jar_file_uris` and `properties` sections.
+
+## Conclusion
+
+This DAG provides a robust setup for submitting Dataproc Serverless PySpark jobs using Cloud Composer. It includes configurations for custom networking, encryption, service accounts, and more, giving you fine-grained control over your job's environment and execution.
+
+Remember to replace all placeholder values with your actual GCP resource details before running this DAG. Also, ensure that your service account has the necessary permissions to access all specified resources and perform the required operations.
+
+Happy data processing!
