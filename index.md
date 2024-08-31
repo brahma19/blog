@@ -62,7 +62,7 @@ Leveraging FinOps principles to optimize resource usage and reduce expenses.
 
 ## Blog
 
-Stay tuned for blog posts on GCP, Hadoop, and data engineering best practices.
+[Latest Weekly Update]({% link _posts/2024-08-31-weekly.md %})
 
 ## Contact Me
 
