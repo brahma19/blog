@@ -1,18 +1,41 @@
+# Site settings
+title: Brahma's Personal Blog
+description: Writing about Data Engineering problems and SQL
+url: "https://brahma19.github.io/blog"
+baseurl: "/blog"
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-minimal
+
 # Layout settings
 defaults:
-  -
-    scope:
-      path: "" 
+  - scope:
+      path: ""
     values:
       layout: "default"
 
-  - # Exclude weekly posts
-    scope:
-      path: "_posts/*"  # Matches all files within _posts
-      exclude: ["_posts/*.weekly.md"]  
-    values:
-      include: false
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
 
-theme: jekyll-theme-minimal
-title: Brahma's Personal Blog
-description: Writing about Data Engineering problems and SQL
+# Include all posts
+include:
+  - _posts
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title:output_ext
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Post settings
+future: true  # Allow posts with future dates
