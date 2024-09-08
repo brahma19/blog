@@ -13,17 +13,18 @@ I like playing chess, you can find me at  [chessdotcom](https://www.chess.com/me
 
 ## Weekly Blog Posts
 
-{% raw %}{% for post in site.posts %}
-  {% capture year %}{{ post.date | date: "%Y" }}{% endcapture %}
-  {% if year != current_year %}
-    {% unless forloop.first %}</ul>{% endunless %}
-    <h3>{{ year }}</h3>
-    <ul>
-    {% assign current_year = year %}
-  {% endif %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      - {{ post.date | date: "%B %d, %Y" }}
-    </li>
-  {% if forloop.last %}</ul>{% endif %}
-{% endfor %}{% endraw %}
+{% raw %}
+{% assign posts_by_year = site.categories.weekly | group_by_exp:"post", "post.date | date: '%Y'" %}
+
+{% for year in posts_by_year %}
+  <h3>{{ year.name }}</h3>
+  <ul>
+    {% for post in year.items %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        - {{ post.date | date: "%B %d, %Y" }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+{% endraw %}
