@@ -8,6 +8,9 @@ A problem solver who loves to work with data.
 Highly skilled and experienced data engineer with expertise in Big Data and modern data warehousing.
 Extensive experience with data modeling, schema design, and database technologies.
 
+In my free time I like playing chess, you can find me at  [chessdotcom](https://www.chess.com/member/nxqplus) or  [lichess](https://lichess.org/@/nxqplus) playing blitz games.
+
+
 **Professional Data Engineer**                                    **Professional Cloud Architect**
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="68dda8cf-243e-4744-a88c-11f7f3503782" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="adf91648-9e89-4de6-bc95-aca60f51af78" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
