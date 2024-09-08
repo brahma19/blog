@@ -1,7 +1,7 @@
 # Site settings
 title: Brahma's Personal Blog
 description: Writing about Data Engineering problems and SQL
-url: "https://brahma19.github.io/blog"
+url: "https://brahma19.github.io"
 baseurl: "/blog"
 
 # Build settings
