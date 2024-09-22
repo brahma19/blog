@@ -10,6 +10,7 @@ Will be writing posts related to Data Engineering and building data pipelines us
 * [About Me](about.md)
 
 ## Weekly Blog Posts
+{% raw %}
 {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
 {% for year in postsByYear %}
   <h2>{{ year.name }}</h2>
@@ -23,3 +24,4 @@ Will be writing posts related to Data Engineering and building data pipelines us
     </ul>
   {% endfor %}
 {% endfor %}
+{% endraw %}
