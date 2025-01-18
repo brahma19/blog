@@ -1,28 +1,47 @@
 ---
 layout: default
 ---
+
 ## About Me
 
-Hello! I'm a **Data Engineer** with a strong focus on **Google Cloud Platform (GCP)** and **Hadoop services**. With a passion for big data and cloud computing.
-A problem solver who loves to work with data.
-Highly skilled and experienced data engineer with expertise in Big Data and modern data warehousing.
-Extensive experience with data modeling, schema design, and database technologies.
+Hello! I'm a **Data Engineer** with a strong focus on **Google Cloud Platform (GCP)** and **Hadoop services**. I'm passionate about big data and cloud computing, solving complex data challenges with cutting-edge technology. I thrive as a problem solver who loves to work with data.
 
-In my free time I like playing chess, you can find me at  [chessdotcom](https://www.chess.com/member/nxqplus) or  [lichess](https://lichess.org/@/nxqplus) playing blitz games.
+## Leadership
 
+- **Team Leadership**: Proven track record in leading high-performance teams of data engineers, fostering a culture of excellence and innovation.
+- **Mentoring**: Committed to developing team capabilities through mentorship, enhancing skills in data management and cloud technologies.
 
-**Professional Data Engineer**                                    **Professional Cloud Architect**
-<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="68dda8cf-243e-4744-a88c-11f7f3503782" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="adf91648-9e89-4de6-bc95-aca60f51af78" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+## Strategic Impact
+
+- **Solution Design**: Architect and implement scalable data solutions that align with business objectives.
+- **Migration Strategy**: Lead strategic migrations to cloud environments, ensuring cost-efficiency and performance optimization.
+
+## Budget Management
+
+- Managing a $50 million USD budget on GCP, with a focus on cost optimization and resource efficiency.
+
+## Passion
+
+- Dedicated to solving complex data challenges, driving technological advancement, and leveraging data for strategic insights.
+
+In my free time, I enjoy playing chess. You can find me on [Chess.com](https://www.chess.com/member/nxqplus) or [Lichess](https://lichess.org/@/nxqplus) playing blitz games.
+
+**Professional Data Engineer**  
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="68dda8cf-243e-4744-a88c-11f7f3503782" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
+**Professional Cloud Architect**  
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="adf91648-9e89-4de6-bc95-aca60f51af78" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
 ## Expertise
 
 - **Google Cloud Platform (GCP)**
   - BigQuery
+  - Cloud Run
   - Cloud Storage
   - Dataflow
   - Dataproc
   - Pub/Sub
-  - Cloud Composer
+  - Cloud Composer (Airflow)
 
 - **Hadoop Ecosystem**
   - HDFS
@@ -39,8 +58,8 @@ In my free time I like playing chess, you can find me at  [chessdotcom](https://
 - **Skills**
   - Strong SQL skills with BigQuery optimization
   - Cloud financial operations (FinOps)
-  - Datawarehousing
-  - Dimensional modelling
+  - Data warehousing
+  - Dimensional modeling
 
 ## Projects
 
@@ -48,25 +67,23 @@ In my free time I like playing chess, you can find me at  [chessdotcom](https://
 Designed and implemented a real-time data pipeline using Google Cloud Pub/Sub, Dataflow, and BigQuery to process and analyze streaming data.
 
 ### 2. Hadoop Cluster Optimization
-Optimized a large-scale Hadoop cluster, improving performance and reducing costs by fine-tuning resource allocation and implementing best practices.
+Optimized a large-scale Hadoop cluster, improving performance and reducing costs through resource allocation fine-tuning and implementing best practices.
 
 ### 3. Data Lake on GCP
-Migrated on prem Hadoop workloads and Data to GCP and integrating with BigQuery and Dataproc for analytics and machine learning workloads.
+Migrated on-premises Hadoop workloads and data to GCP, integrating with BigQuery and Dataproc for analytics and machine learning.
 
 ### 4. BigQuery ELT for Wireless Customers
-Developed an ELT process in BigQuery capable of processing **70 TB** of data per hour within a **10-minute** SLA. This pipeline aggregates session-level information and calculates hourly KPIs for wireless customers connected to cell sites.
+Developed an ELT process in BigQuery capable of processing **70 TB** of data per hour within a **10-minute** SLA, aggregating session-level information and calculating hourly KPIs for wireless customers.
 
 ### 5. Cost Optimization with Cloud FinOps
-Implemented cost-saving measures across various GCP services, reduced project level cost by **45 %** by modernising spark/hadoop worklodas running on Dataproc Long Running clusters to Dataproc Serverless and Native BQ ELT.
-Leveraging FinOps principles to optimize resource usage and reduce expenses.
-
+Implemented cost-saving measures across GCP services, reducing project-level costs by **45%** by modernizing Spark/Hadoop workloads from Dataproc Long Running clusters to Dataproc Serverless and native BigQuery ELT, leveraging FinOps principles.
 
 ## Contact Me
 
 - **Email:** [brahmanandsingh@ymail.com](mailto:brahmanandsingh@ymail.com)
 - **LinkedIn:** [Brahmanand Singh](http://www.linkedin.com/in/brahmanandsingh)
 
-Feel free to reach out to me for collaboration or if you have any questions about data engineering on GCP and Hadoop!
+Feel free to reach out for collaboration or if you have questions about data engineering on GCP and Hadoop!
 
 ---
 
