@@ -6,6 +6,17 @@ layout: default
 
 Hello! I'm a **Data Engineer** with a strong focus on **Google Cloud Platform (GCP)** and **Hadoop services**. I'm passionate about big data and cloud computing, solving complex data challenges with cutting-edge technology. I thrive as a problem solver who loves to work with data.
 
+## GCP Certifications
+
+- **Professional Data Engineer**  
+  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="68dda8cf-243e-4744-a88c-11f7f3503782" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
+- **Professional Cloud Database Engineer**  
+  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="6673ef11-7b1d-42d3-8a7c-e30f59791b34" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
+- **Professional Cloud Architect**  
+  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="adf91648-9e89-4de6-bc95-aca60f51af78" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
 ## Leadership
 
 - **Team Leadership**: Proven track record in leading high-performance teams of data engineers, fostering a culture of excellence and innovation.
@@ -26,12 +37,6 @@ Hello! I'm a **Data Engineer** with a strong focus on **Google Cloud Platform (G
 
 In my free time, I enjoy playing chess. You can find me on [Chess.com](https://www.chess.com/member/nxqplus) or [Lichess](https://lichess.org/@/nxqplus) playing blitz games.
 
-**Professional Data Engineer**  
-<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="68dda8cf-243e-4744-a88c-11f7f3503782" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-
-**Professional Cloud Architect**  
-<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="adf91648-9e89-4de6-bc95-aca60f51af78" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-
 ## Expertise
 
 - **Google Cloud Platform (GCP)**
@@ -49,6 +54,9 @@ In my free time, I enjoy playing chess. You can find me on [Chess.com](https://w
   - Pig
   - Spark
   - Oozie
+
+- **Legacy Data Warehouse Modernization**
+  - Expertise in transforming and modernizing legacy on-premises data warehouses, including Oracle Exadata and Teradata, to Google Cloud Platform, enabling scalable, cost-efficient, and high-performance cloud-native solutions.
 
 - **Programming Languages**
   - Python
