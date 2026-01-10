@@ -15,7 +15,7 @@ Hello! I'm a **Data Engineer** with a strong focus on **Google Cloud Platform (G
   <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="6673ef11-7b1d-42d3-8a7c-e30f59791b34" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
 - **Professional Cloud Architect**  
-  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="adf91648-9e89-4de6-bc95-aca60f51af78" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="eb226dbf-6ed2-4e20-b05c-5227c3c6dd28" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
 ## Leadership
 
